@@ -1,22 +1,12 @@
-import { useState } from 'react';
-
-function Country() {
-  const [name, setName] = useState("United States");
-  const [gold, setGold] = useState(0);
-
-  const handleClick = () => {
-    setGold(gold + 1);
-  };
-
+export default function Country(props) {
   return (
     <div>
-      <h1>{name}</h1>
+      <h1>{props.country.name}{' '}
+        <button onClick={() => props.onDelete((props.country.id))}><i class="fa-solid fa-trash"></i></button>
+      </h1>
       <p>
-        Gold Medals: {gold}{' '}
-        <button onClick={handleClick}>+</button>
+        Gold Medals: {props.country.gold}{' '}
       </p>
     </div>
   );
 }
-
-export default Country;

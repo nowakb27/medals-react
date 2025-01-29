@@ -39,3 +39,7 @@ button {
 button:hover {
   background-color: #d4d4d4;
 }
+
+.trash {
+  max-width: 20px;
+}
